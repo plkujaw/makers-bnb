@@ -61,10 +61,11 @@ As a user<br>
 So that I can know if a space is available<br>
 I would like to receive confirmation that a space is available<br>
 
-## Class diagram - Open on Google chrome ##
+## Class diagram ##
 
-Class diagram: file:///Users/student/Desktop/dotuml%20(1).svg
+![Class diagram](docs/class_diagram.svg) 
 
-## Database diagram - Open on Google chrome ##
+## Database diagram ##
 
-DB diagram: file:///Users/student/Downloads/dotuml.svg
+![DB diagram](docs/db_diagram.svg) 
+
