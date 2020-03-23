@@ -1,6 +1,6 @@
 source 'https://rubygems.org' do
 
-gem 'activerecord'
+gem 'sinatra-activerecord'
 gem 'capybara'
 gem 'pg'
 gem 'simplecov'
