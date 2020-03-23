@@ -1,10 +1,10 @@
-# makers-bnb by The Boolean Autocrats Team:<br>
-Artemis Papanikolaou <br>
-Karla Gardiner<br>
-Kate Haffenden<br>
-George Swarbrick<br>
-James Oddy<br>
-Kuba Jawor<br>
+**Artemis Papanikolaou | Karla Gardiner | Kate Haffenden | George Swarbrick | James Oddy | Kuba Jawor** <br>
+as
+# The Boolean Autocrats Team<br>
+
+### proudly presents:
+
+# MakersBnB
 
 User story 1:<br>
 As a user,<br>
