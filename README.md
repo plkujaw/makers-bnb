@@ -60,3 +60,8 @@ User story 10:<br>
 As a user<br>
 So that I can know if a space is available<br>
 I would like to receive confirmation that a space is available<br>
+
+## Open on Google chrome ##
+
+Class diagram: file:///Users/student/Desktop/dotuml%20(1).svg
+DB diagram: file:///Users/student/Downloads/dotuml.svg
