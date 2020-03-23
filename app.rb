@@ -4,7 +4,7 @@ require 'sinatra/activerecord'
 class MakersBnB < Sinatra::Base
 
   register Sinatra::ActiveRecordExtension
-  enable :sessions
+  enable :sessions, :method_override
 
   configure :development do
     set :database, { adapter: 'postgresql',  encoding: 'unicode', database: 'makersBnB' }
@@ -15,7 +15,23 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
-    "Hello"
+    erb :index
+  end
+
+  get '/register' do
+
+  end
+
+  post '/register' do
+    redirect('/')
+  end
+
+  get '/login' do
+
+  end
+
+  post '/login' do
+
   end
 
   run! if app_file == $0
