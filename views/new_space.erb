@@ -5,6 +5,7 @@
     <title>Create a new space</title>
   </head>
   <body>
+  <% if @user %>
     <form action="/spaces/new" method="post">
     <input type="text" name="name" placeholder="Enter your space name"><br>
     <input type="text" name="description" placeholder="Describe your space"><br>
@@ -15,5 +16,9 @@
     <input type="text" name="price" placeholder="Price per night"><br>
     <input type="submit" value="Submit">
     </form>
+    <% else %>
+    You've gone too far stanger
+    <a href="/">Home Page</a>
+    <% end %>
   </body>
 </html>

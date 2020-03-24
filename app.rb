@@ -31,10 +31,12 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/login' do
-
+    erb :login
   end
 
   post '/login' do
+    session[:id] = User.find_by_sql ["SELECT id FROM users WHERE email = '#{params[:email]}'"]
+    redirect('/spaces')
     # User.find_by(email: params[:email], password: params[:password])
   end
 
@@ -45,12 +47,18 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/new' do
+    @user = User.find_by(id: session[:id])
     erb :new_space
   end
 
   post '/spaces/new' do
     @space = Space.create(name: params[:name], description: params[:description], price: params[:price], street_address: params[:street_address], country: params[:country], postcode: params[:postcode], city: params[:city])
     redirect('/spaces')
+  end
+
+  get '/logout' do
+    session.clear
+    redirect('/')
   end
 
   run! if app_file == $0
