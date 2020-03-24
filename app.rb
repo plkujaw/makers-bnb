@@ -7,11 +7,11 @@ class MakersBnB < Sinatra::Base
   enable :sessions, :method_override
 
   configure :development do
-    set :database, { adapter: 'postgresql',  encoding: 'unicode', database: 'makersBnB' }
+    set :database, { adapter: 'postgresql',  encoding: 'unicode', database: 'makers_bnb' }
   end
 
   configure :test do
-    set :database, { adapter: 'postgresql',  encoding: 'unicode', database: 'makersBnB_test' }
+    set :database, { adapter: 'postgresql',  encoding: 'unicode', database: 'makers_bnb_test' }
   end
 
   get '/' do
