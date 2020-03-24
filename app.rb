@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/activerecord'
 require './lib/space'
+require './lib/user'
 
 class MakersBnB < Sinatra::Base
 
@@ -24,7 +25,9 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/register' do
-    redirect('/')
+    User.create(name: params[:name], email: params[:email], password: params[:password])
+    session[:id] = User.find_by_sql ["SELECT id FROM users WHERE email = '#{params[:email]}'"]
+    redirect('/spaces')
   end
 
   get '/login' do
@@ -32,10 +35,11 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/login' do
-
+    # User.find_by(email: params[:email], password: params[:password])
   end
 
   get '/spaces' do
+    @user = User.find_by(id: session[:id])
     @spaces = Space.order(:price)
     erb :spaces
   end
