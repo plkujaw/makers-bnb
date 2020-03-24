@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/activerecord'
+require './lib/space'
 
 class MakersBnB < Sinatra::Base
 
@@ -35,7 +36,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces' do
-    @spaces = Space.order(:country)
+    @spaces = Space.order(:price)
     erb :spaces
   end
 
