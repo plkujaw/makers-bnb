@@ -34,5 +34,16 @@ class MakersBnB < Sinatra::Base
 
   end
 
+  get '/spaces' do
+
+  end
+
+  get '/spaces/new' do
+
+  end
+
+  post '/spaces' do
+  end
+
   run! if app_file == $0
 end
