@@ -4,6 +4,7 @@ require 'rspec'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'database_cleaner/active_record'
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -18,10 +19,10 @@ ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 Capybara.app = MakersBnB
-# DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|
   config.before(:each) do
-    # DatabaseCleaner.clean
+    DatabaseCleaner.clean
   end
 end

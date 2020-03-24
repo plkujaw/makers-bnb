@@ -8,5 +8,6 @@ gem 'simplecov-console'
 gem 'sinatra'
 gem 'rspec'
 gem 'rubocop'
+gem 'database_cleaner-active_record'
 
 end

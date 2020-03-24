@@ -1,4 +1,5 @@
 require_relative '../spec_helper.rb'
+require_relative '../helpers.rb'
 
 feature 'page view' do
   scenario 'you can see hello on the page' do

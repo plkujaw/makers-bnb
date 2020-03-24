@@ -35,14 +35,17 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces' do
-
+    @spaces = Space.order(:country)
+    erb :spaces
   end
 
   get '/spaces/new' do
-
+    erb :new_space
   end
 
-  post '/spaces' do
+  post '/spaces/new' do
+    @space = Space.create(name: params[:name], description: params[:description], price: params[:price], street_address: params[:street_address], country: params[:country], postcode: params[:postcode], city: params[:city])
+    redirect('/spaces')
   end
 
   run! if app_file == $0

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Spaces</title>
+  </head>
+  <body>
+    <ul>
+      <%@spaces.each do |space| %>
+    <li><%=space.name%>
+    <%=space.description%>
+    <%=space.price%></li>
+    <%end%>
+    </ul>
+  </body>
+</html>

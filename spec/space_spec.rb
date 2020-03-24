@@ -6,7 +6,7 @@ describe Space do
 
   describe '.create' do
     it "exists" do
-      expect(space).to respond_to(:create)
+      expect(described_class).to respond_to(:create)
     end
   end
 

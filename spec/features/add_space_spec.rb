@@ -1,13 +1,13 @@
+require_relative '../helpers.rb'
+
 feature 'adding spaces' do
 
   scenario 'can add a space' do
 
-    visit '/spaces'
-    fill_in :name, with: "bunker"
-    fill_in :description, with: "lovely bunker"
-    fill_in :price, with: 0.50
-    click_button "Submit"
+    visit '/spaces/new'
+    fill_in_space
 
+    expect(current_path).to eq '/spaces'
     expect(page).to have_content "bunker"
     expect(page).to have_content "lovely bunker"
     expect(page).to have_content 0.50
