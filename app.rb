@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require 'sinatra/activerecord'
 require './lib/space'
 require './lib/user'
@@ -6,6 +7,7 @@ require './lib/user'
 class MakersBnB < Sinatra::Base
 
   register Sinatra::ActiveRecordExtension
+  register Sinatra::Flash
   enable :sessions, :method_override
 
   configure :development do
@@ -35,9 +37,15 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/login' do
-    session[:id] = User.find_by_sql ["SELECT id FROM users WHERE email = '#{params[:email]}'"]
-    redirect('/spaces')
-    # User.find_by(email: params[:email], password: params[:password])
+    @user = User.find_by(email: params[:email])
+
+    if @user && @user.authenticate(params[:password])
+      session[:id] = @user.id
+      redirect('/spaces')
+    else
+      flash[:notice] = "Please check your email or password"
+      redirect('/login')
+    end
   end
 
   get '/spaces' do
@@ -58,6 +66,7 @@ class MakersBnB < Sinatra::Base
 
   get '/logout' do
     session.clear
+    # flash[:notice] = "You have logged out"
     redirect('/')
   end
 
