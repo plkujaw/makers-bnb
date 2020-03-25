@@ -40,7 +40,7 @@ h2 {
     border-radius: 25px;
     border-color: #fe921f;
 }
-input[type=text], [type=password], select {
+input[type=text], [type=password], [type=email], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
