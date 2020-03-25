@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
     validates :email, presence: true
     validates :email, uniqueness: true
     has_many :spaces
+    has_many :bookings
 end

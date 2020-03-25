@@ -3,6 +3,7 @@ require 'sinatra/flash'
 require 'sinatra/activerecord'
 require './lib/space'
 require './lib/user'
+require './lib/booking'
 
 class MakersBnB < Sinatra::Base
 
@@ -60,7 +61,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    @space = Space.create(name: params[:name], description: params[:description], price: params[:price], street_address: params[:street_address], country: params[:country], postcode: params[:postcode], city: params[:city])
+    @space = Space.create(name: params[:name], description: params[:description], price: params[:price], street_address: params[:street_address], country: params[:country], postcode: params[:postcode], city: params[:city], owner_id: session[:id])
     redirect('/spaces')
   end
 
@@ -72,7 +73,34 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @space = Space.find_by(id: params[:id])
+    session[:space_id] = params[:id]
     erb :view_space
+  end
+
+  post '/requests' do
+    @booking = Booking.create(customer_id: session[:id],
+      space_id: session[:space_id],
+      booking_start: Date.new(2020,03,14),
+      booking_end: Date.new(2020, 03, 17),
+      confirmation: "requested"
+    )
+    redirect('/requests')
+  end
+
+  get '/requests' do
+    @customer_id = session[:id]
+    # @spaces = Space.joins(:bookings).where('bookings.customer_id' => @customer_id
+    # @bookings2 = Space.find_by_sql(["SELECT s.name, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = #{@customer_id}"])
+    @booking = ActiveRecord::Base.connection.execute("SELECT s.name, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = 1")
+    p @booking[0]
+
+    # @bookings2 = Space.select('spaces.name, spaces.price, bookings.confirmation')
+    # .joins(:bookings)
+    # .where('bookings.customer_id = 2')
+    # @bookings2 = Space.joins(:bookings).select("spaces.name, bookings.confirmation")
+    # @bookings = Space.includes(:bookings).references(:bookings).where("bookings.customer_id = '#{@customer_id}'")
+    # p @bookings2
+    erb :requests
   end
 
   run! if app_file == $0
