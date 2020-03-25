@@ -91,8 +91,11 @@ class MakersBnB < Sinatra::Base
     @customer_id = session[:id]
     # @spaces = Space.joins(:bookings).where('bookings.customer_id' => @customer_id
     # @bookings2 = Space.find_by_sql(["SELECT s.name, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = #{@customer_id}"])
-    @booking = ActiveRecord::Base.connection.execute("SELECT s.name, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = 1")
-    p @booking[0]
+    @booking = ActiveRecord::Base.connection.execute("SELECT s.name, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = #{@customer_id}")
+    @booking.map do |book|
+      p book
+    end
+    # p @booking[0]
 
     # @bookings2 = Space.select('spaces.name, spaces.price, bookings.confirmation')
     # .joins(:bookings)
