@@ -3,18 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>MakersBnB</title>
+    <link rel='stylesheet' href=stylesheet.css>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap" />
   </head>
   <body>
-    <h1> Sign Up </h1>
-    <form action="/register" method="post">
+    <h1><img src="Logo.png"></h1>
+    <h2>Sign up</h2>
+    <div class="main">
+    <form action="/register" method="post" class="form">
     <input type="text" name="name" placeholder="Enter your name"><br>
     <input type="text" name="email" placeholder="Enter your email"><br>
-    <input type="password" name="password" placeholder="Don't worry we won't tell anyone..."><br>
-    <input type="password" name="password_confirmation" placeholder="One more time for the cheap seats in the back..."><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="password" name="password_confirmation" placeholder="Password again"><br>
     <input type="submit" value="Submit">
     </form>
+    </div>
     
-    <a href="/login">Log In</a>
+    <a class="login" href="/login">Log in</a>
 
   </body>
 </html>
