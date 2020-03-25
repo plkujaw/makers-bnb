@@ -70,5 +70,9 @@ class MakersBnB < Sinatra::Base
     redirect('/')
   end
 
+  get 'spaces/:id' do
+    erb :view_space
+  end
+
   run! if app_file == $0
 end
