@@ -1,0 +1,100 @@
+body {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/22/240/855/texture-gradient-simple-background-blue-wallpaper-preview.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: black;
+    background-attachment: fixed;
+    font-family: "Lato";
+} 
+h1 { color: #fe921f; 
+    font-family: 'Lato', sans-serif;
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 58px; 
+    margin: 0 0 58px; 
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+h2 {
+    color: #fe921f; 
+    font-family: 'Lato', sans-serif;
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 58px; 
+    margin: 0 0 58px; 
+    position: absolute;
+    text-align: center;
+    left: 44%;
+    top: 8%;
+}
+.main{
+    text-align: center;
+    width: 400px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    border: 10px solid whitesmoke;
+    border-radius: 25px;
+    border-color: #fe921f;
+}
+input[type=text], [type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 30px;
+  }
+
+.login{
+    background: #fe921f;
+    color: #ffffff;
+    display: inline-block;
+    font-family: 'Lato', sans-serif; 
+    font-size: 12px; 
+    font-weight: bold; 
+    line-height: 12px; 
+    letter-spacing: 1px; 
+    margin: 0 0 30px; 
+    padding: 10px 15px 8px;
+    text-transform: uppercase;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.login:hover{
+    background-color: black;
+}
+a {
+    border-bottom: 1px solid #fe921f;
+    color: #fe921f;
+    padding-bottom: .25em;
+    text-decoration: none;
+  }
+::placeholder{
+    font-family: 'Lato', sans-serif; 
+    font-size: 13px;
+    text-align: center;
+}
+input[type=submit] {
+    background: #fe921f;
+    color: #ffffff;
+    display: inline-block;
+    font-family: 'Lato', sans-serif; 
+    font-size: 12px; 
+    font-weight: bold; 
+    line-height: 12px; 
+    letter-spacing: 1px; 
+    margin: 10px 10px 30px; 
+    padding: 10px 15px 8px;
+    text-transform: uppercase;
+    border: none;
+}
+input[type=submit]:hover {
+    background-color: black;
+}
