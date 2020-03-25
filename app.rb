@@ -70,7 +70,8 @@ class MakersBnB < Sinatra::Base
     redirect('/')
   end
 
-  get 'spaces/:id' do
+  get '/spaces/:id' do
+    @space = Space.find_by(id: params[:id])
     erb :view_space
   end
 
