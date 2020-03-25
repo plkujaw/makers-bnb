@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
     background-image: url("https://c4.wallpaperflare.com/wallpaper/22/240/855/texture-gradient-simple-background-blue-wallpaper-preview.jpg");
     background-repeat: no-repeat;
@@ -23,11 +30,22 @@ h2 {
     font-size: 54px;
     font-weight: bold;
     line-height: 58px;
-    margin: 0 0 58px;
+    /* margin: 0 0 58px; */
     position: absolute;
-    text-align: center;
-    left: 44%;
+    left: 45.5%;
     top: 8%;
+}
+h4 {
+  color: #fe921f;
+  font-family: 'Lato', sans-serif;
+  font-size: 54px;
+  font-weight: bold;
+  line-height: 58px;
+  margin: 0 0 58px;
+  position: absolute;
+  left: 45.5%;
+  top: 8%;
+
 }
 .main{
     text-align: center;
@@ -39,6 +57,18 @@ h2 {
     border: 10px solid whitesmoke;
     border-radius: 25px;
     border-color: #fe921f;
+}
+p {
+    color: #fe921f;
+    font-family: 'Lato', sans-serif;
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 58px;
+    margin: 0 0 58px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+
 }
 input[type=text], [type=password], [type=email], select {
     width: 100%;
@@ -97,4 +127,20 @@ input[type=submit] {
 }
 input[type=submit]:hover {
     background-color: black;
+}
+ul {
+    color: #fe921f;
+    font-family: 'Lato', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    width: 400px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    border: 10px solid whitesmoke;
+    border-radius: 25px;
+    border-color: #fe921f;
+    list-style: none;
 }
