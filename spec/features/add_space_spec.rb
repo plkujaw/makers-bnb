@@ -4,6 +4,8 @@ feature 'adding spaces' do
 
   scenario 'can add a space' do
 
+    register
+
     visit '/spaces/new'
     fill_in_space
 
