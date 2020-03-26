@@ -195,7 +195,7 @@ ul {
     background-color: black;
   }
 
-.request{
+input[type=submit].request{
   background: #fe921f;
   color: #ffffff;
   display: inline-block;
@@ -208,4 +208,8 @@ ul {
   padding: 5px 0;
   text-transform: uppercase;
   border-radius: 10px;
+}
+input[type=submit].request:hover {
+    background-color: black;
+    cursor: pointer;
 }
