@@ -17,3 +17,12 @@ def register
   fill_in :password_confirmation, with: "badpassword"
   click_button "Submit"
 end
+
+def register_wrong_password
+  visit('/')
+  fill_in :name, with: "Mr Fake Name"
+  fill_in :email, with: "fakeaddress@gmail.com"
+  fill_in :password, with: "badpassword"
+  fill_in :password_confirmation, with: "not the same password"
+  click_button "Submit"
+end
