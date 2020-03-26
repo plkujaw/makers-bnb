@@ -5,6 +5,7 @@
     <title>Spaces</title>
     <link rel='stylesheet' href=/../stylesheet.css>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
     <body>
     <p class="logo"><a href="/"><img src="../Logo.png"></a></p>
@@ -12,9 +13,18 @@
       <h1>Name: <%=@space.name%></h1>
       <h2>Description: <%=@space.description%></h2>
       <h2>£<%=@space.price%> per night</h2>
-      <form action="/requests" method='post'>
+      <form action="/requests" method='post' class="ws-validate">
+
+      <div class="form-row">
+          <input type="date" class="hide-replaced" />
+      </div>
+      <!-- <div class="form-row">
+          <input type="submit" />
+      </div> -->
         <input class="request" type="submit" value="Request to book">
       </form>
       <!-- </div> -->
+      <script src="/../lib/webshim-1.16.0/js-webshim/minified/polyfiller.js"></script>
+      <script src='/../calendar.js'></script>
     </body>
   </html>
