@@ -89,8 +89,10 @@ class MakersBnB < Sinatra::Base
   post '/requests' do
     @booking = Booking.create(customer_id: session[:user_id],
       space_id: session[:space_id],
-      booking_start: Date.new(2020,03,14),
-      booking_end: Date.new(2020, 03, 17),
+      booking_start: params[:start_date],
+      booking_end: params[:end_date],
+      # booking_start: Date.new(2020,03,14),
+      # booking_end: Date.new(2020, 03, 17),
       confirmation: "requested"
     )
     redirect('/requests')
