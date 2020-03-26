@@ -3,27 +3,47 @@
   <head>
     <meta charset="utf-8">
     <title>Requests</title>
+    <link rel='stylesheet' href=stylesheet.css>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap" />
   </head>
   <body>
+    <p class="logo"><a href="/"><img src="Logo.png"></a></p>
     <ul>
+      <h5>Requested</h5>
+      <br>
       <%@bookings_requested.each do |request| %>
-      <li><%=request.space_name%>
-        <%=request.space_description%>
-        <%=request.space_price%>
-        <%=request.booking_start_date%>
-        <%=request.booking_end_date%>
-        <%=request.booking_confirmation%></li>
+      <li>Name: <%=request.space_name%>
+        <br>
+        Description: <%=request.space_description%>
+        <br>
+        £<%=request.space_price%> per night
+        <br>
+        Start Date: <%=request.booking_start_date%>
+        <br>
+        End Date: <%=request.booking_end_date%>
+        <br>
+        Confirmation: <%=request.booking_confirmation%></li>
+        <br>
     <%end%>
     </ul>
     <ul>
+      <h5>Received</h5>
+      <br>
       <%@bookings_received.each do |received| %>
-      <li><%=received.space_name%>
-        <%=received.space_description%>
-        <%=received.space_price%>
-        <%=received.booking_start_date%>
-        <%=received.booking_end_date%>
-        <%=received.booking_confirmation%></li>
+      <li>Name: <%=received.space_name%>
+        <br>
+        Description: <%=received.space_description%>
+        <br>
+        £<%=received.space_price%>per night
+        <br>
+        Start Date: <%=received.booking_start_date%>
+        <br>
+        End Date: <%=received.booking_end_date%>
+        <br>
+        Confirmation: <%=received.booking_confirmation%></li>
+        <br>
     <%end%>
     </ul>
+    <a class="login" href="/logout">Log Out</a>
   </body>
 </html>
