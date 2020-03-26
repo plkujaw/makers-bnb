@@ -13,7 +13,7 @@
 
     <ul>
       <%@spaces.each do |space| %>
-    <li><%=space.name%>
+    <li><a href='/spaces/<%=space.id%>'><%=space.name%></a>
     <%=space.description%>
     <%=space.price%></li>
     <%end%>
