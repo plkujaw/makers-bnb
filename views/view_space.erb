@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Spaces</title>
+    <link rel='stylesheet' href=/../stylesheet.css>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap"/>
   </head>
     <body>
-      <h1><%=@space.name%></h1>
-      <h2><%=@space.description%></h2>
-      <h2><%=@space.price%></h2>
-      <form action="/requests" method='post'> 
-        <input type="submit" value="Request to book">
+    <p class="logo"><a href="/"><img src="../Logo.png"></a></p>
+      <!-- <div class="main"> -->
+      <h1>Name: <%=@space.name%></h1>
+      <h2>Description: <%=@space.description%></h2>
+      <h2>£<%=@space.price%> per night</h2>
+      <form action="/requests" method='post'>
+        <input class="request" type="submit" value="Request to book">
       </form>
+      <!-- </div> -->
     </body>
   </html>

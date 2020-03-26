@@ -19,10 +19,10 @@ h1 { color: #fe921f;
     font-size: 54px;
     font-weight: bold;
     line-height: 58px;
-    margin: 0 0 58px;
-    position: absolute;
-    left: 0;
-    top: 10px;
+    height: 100px;
+    width: 100%;
+    line-height: 400px;
+    text-align: center;
 }
 h2 {
     color: #fe921f;
@@ -30,22 +30,39 @@ h2 {
     font-size: 54px;
     font-weight: bold;
     line-height: 58px;
-    /* margin: 0 0 58px; */
-    position: absolute;
-    left: 45.5%;
-    top: 8%;
+    margin: 0 0 58px;
+    height: 100px;
+    width: 100%;
+    line-height: 400px;
+    text-align: center;
+}
+.newspace{
+    background: #fe921f;
+    color: #ffffff;
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    letter-spacing: 1px;
+    margin: 30px 45%;
+    padding: 5px 0;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+.newspace:hover{
+    background-color: black;
 }
 h4 {
   color: #fe921f;
   font-family: 'Lato', sans-serif;
   font-size: 54px;
   font-weight: bold;
-  line-height: 58px;
   margin: 0 0 58px;
-  position: absolute;
-  left: 45.5%;
-  top: 8%;
-
+  height: 100px;
+  width: 100%;
+  line-height: 400px;
+  text-align: center;
 }
 .main{
     text-align: center;
@@ -96,6 +113,7 @@ input[type=text], [type=password], [type=email], select {
     position: absolute;
     right: 10px;
     top: 10px;
+    border-radius: 10px;
 }
 .login:hover{
     background-color: black;
@@ -124,9 +142,11 @@ input[type=submit] {
     padding: 10px 15px 8px;
     text-transform: uppercase;
     border: none;
+    border-radius: 10px;
 }
 input[type=submit]:hover {
     background-color: black;
+    cursor: pointer;
 }
 ul {
     color: #fe921f;
@@ -143,4 +163,57 @@ ul {
     border-radius: 25px;
     border-color: #fe921f;
     list-style: none;
+}
+
+.newspaceform{
+    width: 45%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 10px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 30px;
+}
+
+.homepagelink{
+  background: #fe921f;
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  letter-spacing: 1px;
+  margin: 30px 45%;
+  padding: 10px 10px 10px 10px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  }
+
+.homepagelink:hover{
+    background-color: black;
+  }
+
+input[type=submit].request{
+  background: #fe921f;
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  letter-spacing: 1px;
+  margin: 30px 45%;
+  padding: 5px 5px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 180px;
+  width: 20%;
+  right: -80px;
+}
+input[type=submit].request:hover {
+    background-color: black;
+    cursor: pointer;
 }

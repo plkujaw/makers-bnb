@@ -3,10 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Create a new space</title>
+    <link rel='stylesheet' href=/../stylesheet.css>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap"/>
   </head>
   <body>
+    <p class="logo"><a href="/"><img src="/../Logo.png"></a></p>
   <% if @user %>
-    <form action="/spaces/new" method="post">
+  <h2>Add a new space</h2>
+  <div class="main"
+    <form class ="newspaceform" action="/spaces/new" method="post">
     <input type="text" name="name" placeholder="Enter your space name"><br>
     <input type="text" name="description" placeholder="Describe your space"><br>
     <input type="text" name="street_address" placeholder="Address"><br>
@@ -16,9 +21,13 @@
     <input type="text" name="price" placeholder="Price per night"><br>
     <input type="submit" value="Submit">
     </form>
+    </div>
+    <a class="login" href="/logout">Log Out</a>
     <% else %>
-    You've gone too far stanger
-    <a href="/">Home Page</a>
+    <h2>You've gone too far stanger</h2>
+    <div class="main">
+    <a class="homepagelink" href="/">Home Page</a>
+    </div>
     <% end %>
   </body>
 </html>
