@@ -2,7 +2,7 @@ feature 'log in and log out' do
   scenario 'Can press the log in button' do
     register
     click_link "Log Out"
-    click_link "Log In"
+    click_link "Log in"
     expect(current_path).to eq "/login"
     fill_in :email, with: "fakeaddress@gmail.com"
     fill_in :password, with: "badpassword"

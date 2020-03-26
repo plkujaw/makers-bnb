@@ -1,0 +1,1 @@
+CREATE TABLE "public"."bookings" ("id" serial PRIMARY KEY,"customer_id" INTEGER REFERENCES users (id), "space_id" INTEGER REFERENCES spaces (id), "booking_start" DATE, "booking_end" DATE, "confirmation" VARCHAR(20));

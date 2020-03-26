@@ -15,9 +15,11 @@
 
     <ul>
       <%@spaces.each do |space| %>
-    <li>Name: <%=space.name%></li>
-    <li>Description: <%=space.description%></li>
-    <li>£<%=space.price%></li>
+
+    <li><a href='/spaces/<%=space.id%>'><%=space.name%></a>
+    <%=space.description%>
+    <%=space.price%></li>
+
     <%end%>
     </ul>
     <a class="login" href="/logout">Log Out</a>
