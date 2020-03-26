@@ -209,7 +209,7 @@ input[type=submit].request{
   text-transform: uppercase;
   border-radius: 10px;
   position: absolute;
-  bottom: 180px;
+  top: 480px;
   width: 20%;
   right: -80px;
 }
