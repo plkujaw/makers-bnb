@@ -48,6 +48,7 @@ h2 {
     margin: 30px 45%;
     padding: 5px 0;
     text-transform: uppercase;
+    border-radius: 10px;
 }
 .newspace:hover{
     background-color: black;
@@ -112,6 +113,7 @@ input[type=text], [type=password], [type=email], select {
     position: absolute;
     right: 10px;
     top: 10px;
+    border-radius: 10px;
 }
 .login:hover{
     background-color: black;
@@ -140,9 +142,11 @@ input[type=submit] {
     padding: 10px 15px 8px;
     text-transform: uppercase;
     border: none;
+    border-radius: 10px;
 }
 input[type=submit]:hover {
     background-color: black;
+    cursor: pointer;
 }
 ul {
     color: #fe921f;
@@ -170,4 +174,38 @@ ul {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 30px;
+}
+
+.homepagelink{
+  background: #fe921f;
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  letter-spacing: 1px;
+  margin: 30px 45%;
+  padding: 10px 10px 10px 10px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  }
+
+.homepagelink:hover{
+    background-color: black;
+  }
+
+.request{
+  background: #fe921f;
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  letter-spacing: 1px;
+  margin: 30px 45%;
+  padding: 5px 0;
+  text-transform: uppercase;
+  border-radius: 10px;
 }
