@@ -220,11 +220,21 @@ input[type=submit].request{
   text-transform: uppercase;
   border-radius: 10px;
   position: absolute;
-  top: 480px;
-  width: 20%;
+  top: 750px;
+  width: 22%;
   right: -80px;
 }
 input[type=submit].request:hover {
     background-color: black;
     cursor: pointer;
+}
+.form-row {
+  text-align: center;
+  width: 60%;
+  top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 30px;
+  position: relative;
+
 }
