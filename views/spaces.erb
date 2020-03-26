@@ -10,18 +10,18 @@
     <p class="logo"><a href="/"><img src="Logo.png"></a></p>
     <% if @user %>
       <h4>Welcome <%=@user.name%></h4>
-      <h3><a href='/spaces/new'>Add a new space</a></h3>
     <% end %>
 
     <ul>
       <%@spaces.each do |space| %>
 
-    <li><a href='/spaces/<%=space.id%>'><%=space.name%></a>
-    <%=space.description%>
-    <%=space.price%></li>
+    <li>Name: <a href='/spaces/<%=space.id%>'><%=space.name%></a></li>
+    <li>Description: <%=space.description%></li>
+    <li>£<%=space.price%> per night</li><br>
 
     <%end%>
     </ul>
     <a class="login" href="/logout">Log Out</a>
+    <h3><a class="newspace" href='/spaces/new'>Add a new space</a></h3>
   </body>
 </html>
