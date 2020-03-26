@@ -15,5 +15,15 @@
         <%=request.booking_confirmation%></li>
     <%end%>
     </ul>
+    <ul>
+      <%@bookings_received.each do |received| %>
+      <li><%=received.space_name%>
+        <%=received.space_description%>
+        <%=received.space_price%>
+        <%=received.booking_start_date%>
+        <%=received.booking_end_date%>
+        <%=received.booking_confirmation%></li>
+    <%end%>
+    </ul>
   </body>
 </html>
