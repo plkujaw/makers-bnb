@@ -72,6 +72,9 @@ h4 {
   line-height: 400px;
   text-align: center;
 }
+h5{
+    font-size: 45px;
+}
 .main{
     text-align: center;
     width: 60%;
