@@ -41,7 +41,7 @@ class MakersBnB < Sinatra::Base
     @user = User.find_by(email: params[:email])
 
     if @user && @user.authenticate(params[:password])
-      session[:id] = @user.id
+      session[:user_id] = @user.id
       redirect('/spaces')
     else
       flash[:notice] = "Please check your email or password"
@@ -50,18 +50,19 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces' do
-    @user = User.find_by(id: session[:id])
+    @user = User.find_by(id: session[:user_id])
+    p @user
     @spaces = Space.order(:price)
     erb :spaces
   end
 
   get '/spaces/new' do
-    @user = User.find_by(id: session[:id])
+    @user = User.find_by(id: session[:user_id])
     erb :new_space
   end
 
   post '/spaces/new' do
-    @space = Space.create(name: params[:name], description: params[:description], price: params[:price], street_address: params[:street_address], country: params[:country], postcode: params[:postcode], city: params[:city], owner_id: session[:id])
+    @space = Space.create(name: params[:name], description: params[:description], price: params[:price], street_address: params[:street_address], country: params[:country], postcode: params[:postcode], city: params[:city], owner_id: session[:user_id])
     redirect('/spaces')
   end
 
@@ -74,11 +75,12 @@ class MakersBnB < Sinatra::Base
   get '/spaces/:id' do
     @space = Space.find_by(id: params[:id])
     session[:space_id] = params[:id]
+    p session
     erb :view_space
   end
 
   post '/requests' do
-    @booking = Booking.create(customer_id: session[:id],
+    @booking = Booking.create(customer_id: session[:user_id],
       space_id: session[:space_id],
       booking_start: Date.new(2020,03,14),
       booking_end: Date.new(2020, 03, 17),
@@ -88,10 +90,10 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/requests' do
-    @customer_id = session[:id]
+    @customer_id = session[:user_id]
     # @spaces = Space.joins(:bookings).where('bookings.customer_id' => @customer_id
     # @bookings2 = Space.find_by_sql(["SELECT s.name, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = #{@customer_id}"])
-    @booking = ActiveRecord::Base.connection.execute("SELECT s.name, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = #{@customer_id}")
+    @booking = ActiveRecord::Base.connection.execute("SELECT s.name, s.description, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = #{@customer_id}")
     @booking.map do |book|
       p book
     end
