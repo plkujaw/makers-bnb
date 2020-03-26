@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap" />
   </head>
   <body>
-    <h1> Log In </h1>
+    <p class="logo"><a href="/"><img src="Logo.png"></a></p>
+    <h2> Log In </h2>
+    <div class="main">
     <form action="/login" method="post">
     <input type="text" name="email" placeholder="Enter your email"><br>
+
     <input type="password" name="password" placeholder="Password"><br>
     <input type="submit" value="Log In">
     </form>
-
     <h2>
       <%= flash[:notice] %>
     </h2>

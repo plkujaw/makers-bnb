@@ -3,21 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Spaces</title>
+    <link rel='stylesheet' href=stylesheet.css>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap" />
   </head>
   <body>
+    <p class="logo"><a href="/"><img src="Logo.png"></a></p>
     <% if @user %>
-      <h1>Welcome <%=@user.name%></h1>
-      <h2><a href="/logout">Log Out</a></h2>
+      <h4>Welcome <%=@user.name%></h4>
       <h3><a href='/spaces/new'>Add a new space</a></h3>
     <% end %>
 
     <ul>
       <%@spaces.each do |space| %>
+
     <li><a href='/spaces/<%=space.id%>'><%=space.name%></a>
     <%=space.description%>
     <%=space.price%></li>
+
     <%end%>
     </ul>
-
+    <a class="login" href="/logout">Log Out</a>
   </body>
 </html>
