@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Confirm request</title>
+  </head>
+  <body>
+    <form action='/requests/<%=@booking.id%>' method="post">
+      <input type="submit" value="Confirmed" name="booking_confirmation">
+      <input type="submit" value="Declined" name="booking_confirmation">
+    </form>
+  </body>
+</html>

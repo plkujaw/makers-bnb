@@ -26,10 +26,6 @@ class MakersBnB < Sinatra::Base
     erb :index
   end
 
-  get '/register' do
-
-  end
-
   post '/register' do
     User.create(name: params[:name], email: params[:email], password: params[:password])
     @user = User.find_by(email: params[:email])
@@ -91,19 +87,27 @@ class MakersBnB < Sinatra::Base
       space_id: session[:space_id],
       booking_start: params[:start_date],
       booking_end: params[:end_date],
-      # booking_start: Date.new(2020,03,14),
-      # booking_end: Date.new(2020, 03, 17),
       confirmation: "requested"
     )
     redirect('/requests')
   end
 
   get '/requests' do
-    # @customer_id = session[:user_id]
     @bookings_requested = BookingRequested.all(session[:user_id])
     @bookings_received = BookingReceived.all(session[:user_id])
-    # p @bookings_requested
+    p @bookings_received
     erb :requests
+  end
+
+  get '/requests/:id' do
+    @booking = Booking.find_by(id: params[:id])
+    erb :view_request
+  end
+
+  post '/requests/:id' do
+    @booking = Booking.find_by(id: params[:id])
+    @booking.update(confirmation: params[:booking_confirmation])
+    redirect('/requests')
   end
 
   run! if app_file == $0

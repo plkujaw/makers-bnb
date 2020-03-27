@@ -30,7 +30,8 @@
       <h5>Received</h5>
       <br>
       <%@bookings_received.each do |received| %>
-      <li>Name: <%=received.space_name%>
+      <li><a href='/requests/<%=received.booking_id%>'> Name: <%=received.space_name%>
+      </a>
         <br>
         Description: <%=received.space_description%>
         <br>
