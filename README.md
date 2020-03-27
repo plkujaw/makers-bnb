@@ -160,3 +160,4 @@ I would like to receive confirmation that a space is available
 
 ![DB diagram](docs/db_diagram.svg)
 
+:octocat:
