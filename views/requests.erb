@@ -43,6 +43,12 @@
         <br>
         Confirmation: <%=received.booking_confirmation%></li>
         <br>
+        <% if received.booking_confirmation == "requested" %>
+        <form action='/requests/<%=received.booking_id%>' method="post">
+          <input type="submit" value="Confirmed" name="booking_confirmation">
+          <input type="submit" value="Declined" name="booking_confirmation">
+        </form>
+        <% end %>
     <%end%>
     </ul>
     <a class="request" href="/spaces">View all Spaces</a>
