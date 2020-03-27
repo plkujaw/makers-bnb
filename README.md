@@ -73,7 +73,7 @@ rackup -p 3000
 User story 1:<br>
 ```
 As a user,
-So I can book and rent spaces<br>
+So I can book and rent spaces
 I would like to be able to sign up for AirBnB
 ```
 
