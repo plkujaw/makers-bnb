@@ -1,11 +1,74 @@
 **Artemis Papanikolaou | Karla Gardiner | Kate Haffenden | George Swarbrick | James Oddy | Kuba Jawor** <br>
 <br>
-as
+as:
 # The Boolean Autocrats Team<br>
 
-### proudly presents:
+### proudly present:
+<div style="text-align:center"><img src="public/Logo.png"/></div>
 
-# MakersBnB
+<br>
+
+## To set up the project ##
+
+Clone the repository:
+
+``` 
+git clone git@github.com:plkujaw/makers-bnb.git
+```
+and run: 
+
+```
+bundle install
+```
+<br>
+
+## To set up the databases: ##
+
+Run in your console:
+```
+psql postgres
+```
+
+and run:
+```
+CREATE DATABASE makers_bnb;
+```
+To create the test database, run:
+```
+CREATE DATABASE makers_bnb_test;
+```
+Quit postgres with:
+```
+\q
+```
+
+And then run in terminal: 
+```
+SCRIPTS_DIR=/*path to Project's main directory*/db/migrations/
+DATABASE_NAME=makers_bnb
+for file in $SCRIPTS_DIR/*.sql
+    do psql -U *your username* -d $DATABASE_NAME -f $file
+done
+```
+<br>
+
+And for the test database, run:
+```
+SCRIPTS_DIR=/*path to Project's main directory*/db/migrations/
+DATABASE_NAME=makers_bnb_test
+for file in $SCRIPTS_DIR/*.sql
+    do psql -U *your username* -d $DATABASE_NAME -f $file
+done
+```
+<br>
+
+## To run the app: ##
+```
+rackup -p 3000
+```
+<br>
+
+## User stories ##
 
 User story 1:<br>
 ```
@@ -18,10 +81,8 @@ User story 2:<br>
 ```
 As a user,
 So I can log in
-I would like to be able to log in and log out of the Air BnB
+I would like to be able to log in and log out securely of the Air BnB 
 ```
-(Advanced: Make password encrypted)<br>
-
 User story 3: <br>
 ```
 As a user,
@@ -34,20 +95,12 @@ As a user
 So other users can rent my space
 I would like to list a space
 ```
-(Advanced: Upload photos)
-<br>
-
 User story 5:<br>
 ```
 As a user
 So other users can decide if they want to rent my space
 I would like to be able to add a name, description and price to my space
 ```
-(Space should have:<br>
-name<br>
-description<br>
-price per night)<br>
-<br>
 User story 6:<br>
 ```
 As a user
@@ -71,7 +124,9 @@ I would like to set what dates my spaces are available
 
 User story 9:<br>
 ```
-Make booked spaces unavailable
+As a user
+So that I can book a space 
+I would like to know if a space is unavailable
 ```
 User story 10:<br>
 ```
@@ -79,6 +134,23 @@ As a user
 So that I can know if a space is available
 I would like to receive confirmation that a space is available
 ```
+<br>
+
+## Things to add ##
+
+* Upload photos for your space
+* You shouldn't be able to book a space that is not available
+* You shouldn't be able to book your own space
+* State persistence
+* Date filters
+* Filters in price
+* Adding capacity to spaces
+* Online chat
+* Adding reviews
+* Sending request/confirmation emails
+* Buttons for easy navigation
+* Static calendar 
+<br>
 
 ## Class diagram ##
 
@@ -86,5 +158,5 @@ I would like to receive confirmation that a space is available
 
 ## Database diagram ##
 
-![DB diagram](docs/db_diagram.svg) 
+![DB diagram](docs/db_diagram.svg)
 
