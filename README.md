@@ -1,10 +1,48 @@
 **Artemis Papanikolaou | Karla Gardiner | Kate Haffenden | George Swarbrick | James Oddy | Kuba Jawor** <br>
 <br>
 as:
-# The Boolean Autocrats Team<br>
+# The Boolean Autocrats # 
+<br>
 
-### proudly present:
+### proudly present: ###
 <div style="text-align:center"><img src="public/Logo.png"/></div>
+<br>
+
+## About the project ##
+
+***MakersBnB was created solely through remote pairing, co-ordination and teamwork.***
+
+MakersBnB is a work in progress to simulate the same programming used in common AirBnB websites. Please be kind :)
+<br>
+
+### Main features ###
+
+* Users can register and log in with an encrypted password. 
+* They are able to see a list of the available spaces to rent or offer their own spaces for rent.
+* They are able to request a booking for their chosen space and time.
+* They can see a confirmation if their request has been accepted or declined.
+
+## Technologies used ##
+
+* Ruby
+* Sinatra
+* ActiveRecord
+* BCrypt
+* HTML
+* CSS
+* Postgres
+* RSpec
+* Sinatra/flash
+* Database cleaner ActiveRecord
+
+
+## Methods and tools used ##
+* Trello 
+* Miro
+* DotUML
+* Zoom
+* Slack
+* Agile processes for team management
 
 <br>
 
@@ -52,7 +90,7 @@ done
 ```
 <br>
 
-And for the test database, run:
+For the test database, run:
 ```
 SCRIPTS_DIR=/*path to Project's main directory*/db/migrations/
 DATABASE_NAME=makers_bnb_test
@@ -62,7 +100,7 @@ done
 ```
 <br>
 
-## To run the app: ##
+## To run the app ##
 ```
 rackup -p 3000
 ```
