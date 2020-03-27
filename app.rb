@@ -77,6 +77,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/:id' do
+    @user = User.find_by(id: session[:user_id])
     @space = Space.find_by(id: params[:id])
     session[:space_id] = params[:id]
     erb :view_space
@@ -93,6 +94,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/requests' do
+    @user = User.find_by(id: session[:user_id])
     @bookings_requested = BookingRequested.all(session[:user_id])
     @bookings_received = BookingReceived.all(session[:user_id])
     p @bookings_received
@@ -100,6 +102,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/requests/:id' do
+    @user = User.find_by(id: session[:user_id])
     @booking = Booking.find_by(id: params[:id])
     erb :view_request
   end
@@ -112,38 +115,3 @@ class MakersBnB < Sinatra::Base
 
   run! if app_file == $0
 end
-
-
-
-
-
-
-
-
-# @spaces = Space.joins(:bookings).where('bookings.customer_id' => @customer_id
-# @bookings2 = Space.find_by_sql(["SELECT s.name, s.price, b.confirmation FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = #{@customer_id}"])
-# @bookings_requested = ActiveRecord::Base.connection.execute("SELECT s.name, s.price, s.description, s.street_address, s.city, s.country, s.postcode, b.confirmation, b.booking_start, b.booking_end FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE b.customer_id = #{@customer_id}")
-# @bookings_requested.map do |request|
-#   # p request
-#   BookingRequested.new(
-#     space_name: request['name'],
-#     space_price: request['price'],
-#     space_description: request['description'],
-#     space_street_address: request['address'],
-#     space_city: request['city'],
-#     space_country: request['country'],
-#     space_post_code: request['postcode'],
-#     booking_confirmation: request['confirmation'],
-#     booking_start_date: request['booking_start'],
-#     booking_end_date: request['booking_end']
-#   )
-# end
-# p @booking[0]
-
-# @bookings2 = Space.select('spaces.name, spaces.price, bookings.confirmation')
-# .joins(:bookings)
-# .where('bookings.customer_id = 2')
-# @bookings2 = Space.joins(:bookings).select("spaces.name, bookings.confirmation")
-# @bookings = Space.includes(:bookings).references(:bookings).where("bookings.customer_id = '#{@customer_id}'")
-# p @bookings2
-# erb :requests

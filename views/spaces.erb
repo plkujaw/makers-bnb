@@ -9,7 +9,8 @@
   <body>
     <p class="logo"><a href="/"><img src="Logo.png"></a></p>
     <% if @user %>
-      <h4>Welcome <%=@user.name%></h4>
+      <h4>Welcome <%=@user.name%></h4><br>
+      <a class="request" href="/requests">View your Requests</a>
     <% end %>
 
     <ul>
