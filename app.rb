@@ -27,14 +27,17 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/register' do
-    User.create(name: params[:name], email: params[:email], password: params[:password])
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password_confirmation])
+    if params[:password] == params[:password_confirmation]
+      User.create(name: params[:name], email: params[:email], password: params[:password])
+      @user = User.find_by(email: params[:email])
+    # if @user && @user.authenticate(params[:password_confirmation])
       session[:user_id] = @user.id
       redirect('/spaces')
     else
-      flash[:notice] = "Those passwords don't match, please try again"
-      redirect('/')
+    # else
+    flash[:notice] = "Those passwords don't match, please try again"
+    redirect('/')
+    #   flash[:notice] = "Those passwords don't match, please try again"
     end
   end
 
