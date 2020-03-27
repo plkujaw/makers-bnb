@@ -97,7 +97,6 @@ class MakersBnB < Sinatra::Base
     @user = User.find_by(id: session[:user_id])
     @bookings_requested = BookingRequested.all(session[:user_id])
     @bookings_received = BookingReceived.all(session[:user_id])
-    p @bookings_received
     erb :requests
   end
 

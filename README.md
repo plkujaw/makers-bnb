@@ -197,4 +197,4 @@ I would like to receive confirmation that a space is available
 ## Database diagram ##
 
 ![DB diagram](docs/db_diagram.svg)
-
+    
