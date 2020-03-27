@@ -1,7 +1,7 @@
 class BookingReceived
 
   def self.all(owner_id)
-    @bookings_received = ActiveRecord::Base.connection.execute("SELECT s.name, s.price, s.description, s.street_address, s.city, s.country, s.postcode, b.id booking_id, b.confirmation, b.booking_start, b.booking_end FROM spaces s LEFT JOIN bookings b ON s.id = b.space_id WHERE s.owner_id = #{owner_id}")
+    @bookings_received = ActiveRecord::Base.connection.execute("SELECT s.name, s.price, s.description, s.street_address, s.city, s.country, s.postcode, b.id booking_id, b.confirmation, b.booking_start, b.booking_end FROM spaces s INNER JOIN bookings b ON s.id = b.space_id WHERE s.owner_id = #{owner_id}")
 
     @bookings_received.map do |request|
       # p request
